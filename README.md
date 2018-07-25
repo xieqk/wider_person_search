@@ -53,7 +53,7 @@ Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](#), [DenseNet-121@Baidu
 
 ### Face detection & face featrue embedding
 
-modify lines 13~14 to your own data path, for example: 
+1. modify lines 13~14 to your own data path, for example: 
 
 ```Python
 trainval_root = '/data2/xieqk/wider/person_search_trainval'
@@ -62,7 +62,7 @@ test_root = '/data2/xieqk/wider/person_search_test'
 
 Folder structure is like:
 
-```Shell
+```
 |- wider
     |- person_search_trainval
         |- train
