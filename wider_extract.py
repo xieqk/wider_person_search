@@ -69,24 +69,44 @@ def main(args):
     model.eval()
     _t = Timer()
     with torch.no_grad():
-        feats, pids = [], []
+        # val set
+        val_feats, val_pids = [], []
         for (imgs, pid, _) in valloader:
             imgs = imgs.cuda()
             _t.tic()
             features = model(imgs)
             _t.toc()
             features = features.data.cpu()
-            feats.append(features)
-            pids.extend(pid)
+            val_feats.append(features)
+            val_pids.extend(pid)
             print('Extract features (validation) ... %d/%d BatchTime: %.3f s, Average: %.3f s(%d imgs)'%(
-                len(pids), dataset.num_val_imgs, _t.diff, _t.average_time, args.test_batch
+                len(val_pids), dataset.num_val_imgs, _t.diff, _t.average_time, args.test_batch
             ))
-        feats = torch.cat(feats, 0).numpy()
-        print('feature shape: ', feats.shape)
-        feat_dict = {}
-        for i, pid in enumerate(pids):
-            feat_dict.update({pid:feats[i].tolist()})
-        my_pickle(feat_dict, osp.join('features', 'reid_em_val_%s.pkl'%args.arch))
+        val_feats = torch.cat(val_feats, 0).numpy()
+        val_feat_dict = {}
+        for i, pid in enumerate(val_pids):
+            val_feat_dict.update({pid:val_feats[i].tolist()})
+        my_pickle(val_feat_dict, osp.join('features', 'reid_em_val_%s.pkl'%args.arch))
+        # test set
+        test_feats, test_pids = [], []
+        for (imgs, pid, _) in testloader:
+            imgs = imgs.cuda()
+            _t.tic()
+            features = model(imgs)
+            _t.toc()
+            features = features.data.cpu()
+            test_feats.append(features)
+            test_pids.extend(pid)
+            print('Extract features (test) ... %d/%d BatchTime: %.3f s, Average: %.3f s(%d imgs)'%(
+                len(test_pids), dataset.num_test_imgs, _t.diff, _t.average_time, args.test_batch
+            ))
+        test_feats = torch.cat(test_feats, 0).numpy()
+        print('val feature shape: ', val_feats.shape)
+        print('test feature shape: ', test_feats.shape)
+        test_feat_dict = {}
+        for i, pid in enumerate(test_pids):
+            test_feat_dict.update({pid:test_feats[i].tolist()})
+        my_pickle(test_feat_dict, osp.join('features', 'reid_em_test_%s.pkl'%args.arch))
 
 
 if __name__ == '__main__':
