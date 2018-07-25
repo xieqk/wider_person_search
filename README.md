@@ -15,7 +15,7 @@ WIDER Person Search Challenge
 
 ## Environment & Dependency
 
-- Python 3+
+- Python 3.+
 - mxnet: ```pip3 install mxnet-cu80```
 - pytorch: ```pip3 install torch torchvision```
 
