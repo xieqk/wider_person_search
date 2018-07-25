@@ -116,7 +116,7 @@ def main(args):
             assert fbbox is not None, 'Cast: No face detected !'
             ffeat = face_exfeat(img, fbbox, landmark, embedding)
             _t.toc()
-            print('%s %d/%d ... %s %d/%d ... time: %.3f ms average: %.3f ms'%(movie, movie_cnt, movie_num, 
+            print('%s %d/%d ... %s %d/%d ... time: %.3f s average: %.3f s'%(movie, movie_cnt, movie_num, 
                                                 cast_id, i+1, casts_num, _t.diff, _t.average_time))
             face_dict[movie]['cast'].append({
                 'id': cast_id,
@@ -132,7 +132,7 @@ def main(args):
             crop, fbbox, landmark = face_det_candi(img, rect, detector_candi)
             if fbbox is None:
                 _t.toc()
-                print('%s %d/%d ... %s %d/%d ... time: %.3f ms average: %.3f ms'%(movie, movie_cnt, movie_num, 
+                print('%s %d/%d ... %s %d/%d ... time: %.3f s average: %.3f s'%(movie, movie_cnt, movie_num, 
                                                     candidate_id, i+1, candidates_num, _t.diff, _t.average_time))
                 face_dict[movie]['candidates'].append({
                     'id': candidate_id,
@@ -142,7 +142,7 @@ def main(args):
                 continue
             ffeat = face_exfeat(crop, fbbox, landmark, embedding)
             _t.toc()
-            print('%s %d/%d ... %s %d/%d ... time: %.3f ms average: %.3f ms'%(movie, movie_cnt, movie_num, 
+            print('%s %d/%d ... %s %d/%d ... time: %.3f s average: %.3f s'%(movie, movie_cnt, movie_num, 
                                                 candidate_id, i+1, candidates_num, _t.diff, _t.average_time))
             face_dict[movie]['candidates'].append({
                 'id': candidate_id,
