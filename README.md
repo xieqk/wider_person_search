@@ -1,7 +1,7 @@
 # wider_person_search
 WIDER Person Search Challenge
 
-under construction ...
+## under construction ...
 
 * `arcface`: tools for face feature embedding.  (mxnet)
 * `featrues`: Folder to save features of face & ReID.
@@ -23,16 +23,63 @@ under construction ...
 
 ### arcface
 
-Put the pre-trained face model [LResNet50E-IR@BaiduNetdisk](https://pan.baidu.com/s/1mj6X7MK) in `./arcface/model/` and unzip it. Folder structure like:
+Put the pre-trained face model [LResNet50E-IR@BaiduNetdisk](https://pan.baidu.com/s/1mj6X7MK) in `./arcface/model/` and unzip it. Folder structure is like:
 
 ```Shell
 |- arcface
     |- model
         |- model-r50-am-lfw-0000.params
         |- model-r50-am-lfw-symbol.json
-    |- __init__.py
     ...
 ```
+
+### reid
+
+Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](#), [DenseNet-121@BaiduNetdisk](#), [SEResNet-101@BaiduNetdisk](#) and [SEResNeXt-101@BaiduNetdisk](#) in `./reid/models/trained_model/`. Folder structure is like:
+
+```Shell
+|- reid
+    |- models
+        |- trained_models
+            |- resnet101_best_model.pth.tar
+            |- densenet121_best_model.pth.tar
+            |- seresnet101_best_model.pth.tar
+            |- seresnext101_best_model.pth.tar
+        ...
+    ...
+```
+
+## Feature embedding
+
+### Face detection & face featrue embedding
+
+modify lines 13~14 to your own data path, for example: 
+
+```Python
+trainval_root = '/data2/xieqk/wider/person_search_trainval'
+test_root = '/data2/xieqk/wider/person_search_test'
+```
+
+Folder structure is like:
+
+```Shell
+|- wider
+    |- person_search_trainval
+        |- train
+            |- tt0048545
+            ...
+        |- val
+            |- tt0056923
+            ...
+        |- train.json
+        |- val.json
+    |- person_search_test
+        |- test
+            |- tt0038650
+            ...
+        |- test.json
+```
+
 
 
 
