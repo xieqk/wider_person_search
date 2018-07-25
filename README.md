@@ -13,8 +13,9 @@ WIDER Person Search Challenge
 * `wider_extract.py`: global ReID feature embedding. (validation and test)
 * `rank.py`: get the final result. (validation or test)
 
-## Dependency
+## Environment & Dependency
 
+- Python 3+
 - mxnet: ```pip3 install mxnet-cu80```
 - pytorch: ```pip3 install torch torchvision```
 
@@ -49,7 +50,7 @@ Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](#), [DenseNet-121@Baidu
     ...
 ```
 
-## Feature embedding
+## Feature extraction
 
 ### Face detection & face featrue embedding
 
@@ -83,14 +84,15 @@ Folder structure is like:
 2. Face detection and face feature extraction (Default gpu_id = 0)
 
 ```Shell
-# validation set detection & embedding, output:./features/face_em_val.pkl
+# validation set detection & embedding, output: ./features/face_em_val.pkl
 python face_det_em.py
 
-# test set detection & embedding, output:./features/face_em_val.pkl
+# test set detection & embedding, output: ./features/face_em_test.pkl
 python face_det_em.py --is-test 1
 
 # change gpu devices: python face_det_em.py --gpu 2
 ```
 
+### ReID feature extraction
 
 
