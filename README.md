@@ -23,7 +23,7 @@ under construction ...
 
 ### arcface
 
-Put the pre-trained face model ![LResNet50E-IR@BaiduNetdisk](https://pan.baidu.com/s/1mj6X7MK) in `./arcface/model/` and unzip it. Folder structure like:
+Put the pre-trained face model [LResNet50E-IR@BaiduNetdisk](https://pan.baidu.com/s/1mj6X7MK) in `./arcface/model/` and unzip it. Folder structure like:
 
 ```Shell
 |- arcface
@@ -33,5 +33,7 @@ Put the pre-trained face model ![LResNet50E-IR@BaiduNetdisk](https://pan.baidu.c
     |- __init__.py
     ...
 ```
+
+
 
 
