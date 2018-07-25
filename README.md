@@ -25,7 +25,7 @@ WIDER Person Search Challenge
 
 Put the pre-trained face model [LResNet50E-IR@BaiduNetdisk](https://pan.baidu.com/s/1mj6X7MK) in `./arcface/model/` and unzip it. Folder structure is like:
 
-```Shell
+```
 |- arcface
     |- model
         |- model-r50-am-lfw-0000.params
@@ -37,7 +37,7 @@ Put the pre-trained face model [LResNet50E-IR@BaiduNetdisk](https://pan.baidu.co
 
 Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](#), [DenseNet-121@BaiduNetdisk](#), [SEResNet-101@BaiduNetdisk](#) and [SEResNeXt-101@BaiduNetdisk](#) in `./reid/models/trained_model/`. Folder structure is like:
 
-```Shell
+```
 |- reid
     |- models
         |- trained_models
@@ -80,7 +80,17 @@ Folder structure is like:
         |- test.json
 ```
 
+2. Face detection and face feature extraction (Default gpu_id = 0)
 
+```Shell
+# validation set detection & embedding, output:./features/face_em_val.pkl
+python face_det_em.py
+
+# test set detection & embedding, output:./features/face_em_val.pkl
+python face_det_em.py --is-test 1
+
+# change gpu devices: python face_det_em.py --gpu 2
+```
 
 
 
