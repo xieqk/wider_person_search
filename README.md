@@ -4,10 +4,12 @@ WIDER Person Search Challenge
 ## under construction ...
 
 * `arcface`: tools for face feature embedding.  (mxnet)
+* `data`: Folder to save images for ReID features extraction
 * `featrues`: Folder to save features of face & ReID.
 * `mtcnn`: tools for face detection. (mxnet)
 * `reid`: tools for global ReID feature embedding. (pytorch)
 * `utils`: some utilities.
+* `crop.py`: make images for ReID features extraction from original dataset -> `./data`
 * `eval.py`: tools for evaluation.
 * `face_det_em.py`: face detection & face feature embedding. (validation or test)
 * `wider_extract.py`: global ReID feature embedding. (validation and test)
@@ -90,7 +92,8 @@ python face_det_em.py
 # test set detection & embedding, output: ./features/face_em_test.pkl
 python face_det_em.py --is-test 1
 
-# change gpu devices: python face_det_em.py --gpu 2
+# change gpu devices: 
+# python face_det_em.py --gpu 2
 ```
 
 ### ReID feature extraction
@@ -124,7 +127,7 @@ python wider_extract.py -a seresnet101
 python wider_extract.py -a seresnext101
 
 # change gpu devices
-python wider_extract.py -a resnet101 --gpu 1
+# python wider_extract.py -a resnet101 --gpu 1
 ```
 
 ### Get the final rank list
@@ -150,8 +153,10 @@ just run:
 ```Shell
 # get final rank in validation set & evaluation
 python rank.py      # with fusion features
+
+# or
 # choices = ['resnet101', 'densenet121', 'seresnet101', 'seresnext101']
-python rank.py -a resnet101     # with ResNet-101 features
+# python rank.py -a resnet101     # with ResNet-101 features
 
 # get final rank in test set
 python rank.py --is-test 1
