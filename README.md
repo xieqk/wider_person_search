@@ -108,6 +108,54 @@ then run:
 
 
 ```Shell
-python crop.py
-# the result is in ./data/wider_exfeat/val & ./data/wider_exfeat/test
+python crop.py  # the result is in ./data/wider_exfeat/val & ./data/wider_exfeat/test
 ```
+
+2. feature embedding, run:
+
+```Shell
+# use ResNet-101
+python wider_extract.py -a resnet101
+# use DenseNet-121
+python wider_extract.py -a densenet121
+# use SEResNet-101
+python wider_extract.py -a seresnet101
+# use SEResNeXt-101
+python wider_extract.py -a seresnext101
+
+# change gpu devices
+python wider_extract.py -a resnet101 --gpu 1
+```
+
+### Get the final rank list
+
+After getting all face and ReID features, that means:
+
+```
+|- features
+    |- face_em_test.pkl     # face features (test set)
+    |- face_em_val.pkl      # face features (validation set)
+    |- reid_em_test_densenet121.pkl     # DenseNet-121 ReID features (test set)
+    |- reid_em_test_resnet101.pkl       # ResNet-101 ReID features (test set)
+    |- reid_em_test_seresnet101.pkl     # SEResNet-101 ReID features (test set)
+    |- reid_em_test_seresnext101.pkl    # SEResNeXt-101 ReID features (test set)
+    |- reid_em_val_densenet121.pkl      # DenseNet-121 ReID features (validation set)
+    |- reid_em_val_resnet101.pkl        # ResNet-101 ReID features (validation set)
+    |- reid_em_val_seresnet101.pkl      # SEResNet-101 ReID features (validation set)
+    |- reid_em_val_seresnext101.pkl     # SEResNeXt-101 ReID features (validation set)
+```
+
+just run:
+
+```Shell
+# get final rank in validation set & evaluation
+python rank.py      # with fusion features
+# choices = ['resnet101', 'densenet121', 'seresnet101', 'seresnext101']
+python rank.py -a resnet101     # with ResNet-101 features
+
+# get final rank in test set
+python rank.py --is-test 1
+```
+
+The output is `./val_rank.txt` or `./test_rank.txt`.
+
