@@ -95,4 +95,19 @@ python face_det_em.py --is-test 1
 
 ### ReID feature extraction
 
+1. Data preparation: crop out all the images of the candidates and name them with their id.
 
+modify lines 6~7 to your own data path, for example: 
+
+```Python
+trainval_root = '/data2/xieqk/wider/person_search_trainval'
+test_root = '/data2/xieqk/wider/person_search_test'
+```
+
+then run:
+
+
+```Shell
+python crop.py
+# the result is in ./data/wider_exfeat/val & ./data/wider_exfeat/test
+```
