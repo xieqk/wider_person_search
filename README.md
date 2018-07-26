@@ -21,6 +21,7 @@ WIDER Person Search Challenge
 - opencv-python: ```pip3 install opencv-python```
 - mxnet: ```pip3 install mxnet-cu80```
 - pytorch: ```pip3 install torch torchvision```
+- numpy, scipy, sklearn, skimage: ```pip3 install numpy scipy scikit-learn scikit-image```
 
 
 ## Prepare Train models
