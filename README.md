@@ -18,6 +18,7 @@ WIDER Person Search Challenge
 ## Environment & Dependency
 
 - Python 3.+
+- opencv-python: ```pip3 install opencv-python```
 - mxnet: ```pip3 install mxnet-cu80```
 - pytorch: ```pip3 install torch torchvision```
 
@@ -56,7 +57,7 @@ Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](#), [DenseNet-121@Baidu
 
 ### Face detection & face featrue embedding
 
-1. modify lines 13~14 to your own data path, for example: 
+1. modify lines 13~14 of `face_det_em.py` to your own data path, for example: 
 
 ```Python
 trainval_root = '/data2/xieqk/wider/person_search_trainval'
