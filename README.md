@@ -20,7 +20,7 @@ WIDER Person Search Challenge
 - Python 3.+
 - opencv-python: ```pip3 install opencv-python```
 - mxnet: ```pip3 install mxnet-cu80```
-- pytorch: ```pip3 install torch torchvision```
+- pytorch: ```pip3 install torch torchvision visdom```
 - numpy, scipy, sklearn, skimage: ```pip3 install numpy scipy scikit-learn scikit-image```
 
 
