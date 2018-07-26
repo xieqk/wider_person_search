@@ -102,7 +102,7 @@ python face_det_em.py --is-test 1
 
 1. Data preparation: crop out all the images of the candidates and name them with their id.
 
-modify lines 6~7 to your own data path, for example: 
+modify lines 6~7 of `crop.py` to your own data path, for example: 
 
 ```Python
 trainval_root = '/data2/xieqk/wider/person_search_trainval'
