@@ -1,7 +1,7 @@
 # wider_person_search
 WIDER Person Search Challenge
 
-## under construction ...
+
 
 * `arcface`: tools for face feature embedding.  (mxnet)
 * `data`: Folder to save images for ReID features extraction
@@ -166,3 +166,31 @@ python rank.py --is-test 1
 
 The output is `./val_rank.txt` or `./test_rank.txt`.
 
+## Results
+
+| ReID Features | mAP (%, validation set) | mAP (%, test set) |
+| :-----------: | :---------------------: | :---------------: |
+| Resnet-101    | 0.6819 | - |
+| DenseNet-121  | 0.6831 | - |
+| SEResNet-101  | 0.6972 | - |
+| SEResNeXt-101 | 0.7007 | - |
+| SEResNeXt-101+ResNet-101 | 0.7081 | - |
+| SEResNeXt-101+ResNet-101+DenseNet-121 | 0.7009 | - |
+| Resnet-101+DenseNet-121+SEResNet-101+SEResNeXt-101| 0.7132 | - |
+
+## References
+
+[1] Zhang, Kaipeng, Zhanpeng Zhang, Zhifeng Li, and Yu Qiao. "Joint face detection and alignment using multitask cascaded convolutional networks." IEEE Signal Processing Letters 23, no. 10 (2016): 1499-1503.
+
+[2] Deng, Jiankang, Jia Guo, and Stefanos Zafeiriou. "Arcface: Additive angular margin loss for deep face recognition." arXiv preprint arXiv:1801.07698 (2018).
+
+[3] Hermans, Alexander, Lucas Beyer, and Bastian Leibe. "In defense of the triplet loss for person re-identification." arXiv preprint arXiv:1703.07737 (2017).
+
+[4] Szegedy, Christian, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew Wojna. "Rethinking the inception architecture for computer vision." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 2818-2826. 2016.
+
+## Github projects:
+
+* [mxnet_mtcnn_face_detection](https://github.com/pangyupo/mxnet_mtcnn_face_detection)
+* [insightface](https://github.com/deepinsight/insightface)
+* [open-reid](https://github.com/Cysu/open-reid)
+* [deep-person-reid](https://github.com/KaiyangZhou/deep-person-reid)
