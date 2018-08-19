@@ -40,7 +40,7 @@ Put the pre-trained face model [LResNet50E-IR@BaiduNetdisk](https://pan.baidu.co
 
 ### reid
 
-Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](#), [DenseNet-121@BaiduNetdisk](#), [SEResNet-101@BaiduNetdisk](#) and [SEResNeXt-101@BaiduNetdisk](#) in `./reid/models/trained_model/`. Folder structure is like:
+Put the pre-trained ReID model [ResNet-101@BaiduNetdisk](https://pan.baidu.com/s/1E-ogV3lwlXNGcYSGGqZ1ZQ), [DenseNet-121@BaiduNetdisk](https://pan.baidu.com/s/1X2euVExswFwXkCcrXMWtIQ), [SEResNet-101@BaiduNetdisk](https://pan.baidu.com/s/1MC1GrGt6T8-2wxPwhxFbXw) and [SEResNeXt-101@BaiduNetdisk](https://pan.baidu.com/s/1OJIz5vHVrZA-fOXgF39bLA) in `./reid/models/trained_model/`. Folder structure is like:
 
 ```
 |- reid
